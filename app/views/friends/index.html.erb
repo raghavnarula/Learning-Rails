@@ -11,16 +11,21 @@
         <th scope="col">Email</th>
         <th scope="col">Phone</th>
         <th scope="col">Twitter</th>
+        <th scope="col">User ID</th>
         <th scope="col">More Info.</th>
 
       </tr>
       </thead>
       <tbody>
       <% @friends.each do |friend| %>
+      <%#=current_user.inspect %>
+        <%#=friend.user %>
+      <%if current_user == friend.user %>
         <tr>
             <%= render friend %>
             <td><%= link_to "Show this friend", friend %></td>
         </tr>
+      <%end %>
       <% end %>
       </tbody>
     </table>
